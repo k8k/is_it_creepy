@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Creepy Date</title>
+    <link rel="stylesheet" href ="/static/creepy_style.css"/>
+	
+
+
+
+</head>
+<body>
+
+<div id="main-container">
+	<form id ="creepform">
+	Your Age:<input type="text" name="your_age"><br>
+	Their Age:<input type="text" name="other_age"><br>
+	<button type="button" id="creep-button">Is It Creepy?</button>
+
+	</form>
+</div>
+
+<div id="creep-result">
+	{{ your_age }} {{ other_age }}
+</div>    
+
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="/../static/creepy_java.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+#creep-result {
+	height:50px;
+	width: 300px;
+	background-color: blue;
+}
+
+#main-container {
+	width: 300px;
+	height: 150px;
+	background-color: gray;
+}
