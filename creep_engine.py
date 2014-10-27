@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, jsonify, render_template, request
 
 app = Flask(__name__)
 
@@ -8,20 +8,14 @@ def show_creepy_form():
 
 @app.route('/creepy')
 def is_it_creepy():
-	your_age = request.args.get("your_age")
-	other_age = request.args.get("other_age")
+	your_age = request.args.get("your_age", type=int)
+	other_age = request.args.get("other_age", type=int)
 	print your_age
 	print other_age
 
-
-
-	your_age = int(your_age)
-	other_age = int(other_age)
-	if other >= (your_age/2 + 7):
-		return render_template("creepy.html", your_age=your_age, other_age=other_age
-			)
-	else:
-		return render_template("creepy.html", your_age=your_age, other_age=other_age)
+	is_creepy = (other_age < (your_age/2 + 7))
+		
+	return jsonify(is_creepy=is_creepy)
 
 
 if __name__ == '__main__':
