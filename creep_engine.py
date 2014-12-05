@@ -1,7 +1,14 @@
 from flask import Flask, jsonify, render_template, request
 import os
 
+
+SECRET_KEY 		= os.environ.get("FLASK_SECRET_KEY", "development")
+# DATATBASE_URL	= os.environ.get("DATATBASE_URL", "postgresql:///hackbright")
+
+
 app = Flask(__name__)
+app.config['SECRET_KEY'] = SECRET_KEY
+
 
 @app.route('/')
 def show_creepy_form():
@@ -21,4 +28,6 @@ def is_it_creepy():
 
 if __name__ == '__main__':
 	PORT = int(os.environ.get("PORT",5000))
-	app.run(debug=True, host="0.0.0.0", port=PORT)
+	DEBUG = "NO_DEBUG" not in os.environ
+
+	app.run(debug=DEBUG, host="0.0.0.0", port=PORT)
