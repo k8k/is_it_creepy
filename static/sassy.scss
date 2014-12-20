@@ -1,0 +1,64 @@
+$sweet-blue: #002654;
+$goldy-yellow: #eeb111; 
+$dark-gray: #dddddd;
+$light-gray: #aaaaaa;
+$almost-white: #f7f7f7;
+
+$border-radius: 5px;
+
+$primary-font: "Trebuchet MS", Helvetica, sans-serif;
+
+@mixin creep-box {
+	width: 400px;
+	margin: auto;
+	text-align: center;
+	color: $sweet-blue;
+	padding: 10px;
+}
+
+body {
+	font-family: $primary-font;
+}
+
+#creep-result {
+	background-color: $dark-gray;
+	height:100px;
+	@include creep-box;
+	border-bottom-right-radius: $border-radius;
+	border-bottom-left-radius: $border-radius; 
+	padding-top: 20px;
+	font-size: 20px;
+}
+
+#main-container {
+	background-color: $light-gray;
+	height: 300px;
+	@include creep-box;
+	border-top-left-radius: $border-radius;
+	border-top-right-radius: $border-radius;
+	
+}
+
+input[type="text"] {
+	background-color: $almost-white;
+	color: $light-gray;
+	height: $border-radius*4;
+	border-radius: $border-radius;
+}
+
+#creep-button {
+	background-color: $goldy-yellow;
+	color: $sweet-blue;
+	border-radius: $border-radius;
+	margin-top: $border-radius*4;
+	height: 30px$border-radius*6;
+	width: 30%;
+	font-family: $primary-font;
+	font-size: 1.2em;
+	font-weight: bold;
+
+}
+.form-label {
+	margin: $border-radius*2;
+
+}
